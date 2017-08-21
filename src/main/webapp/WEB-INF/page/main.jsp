@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--admin roleId : 3791532340293158876 --%>
+<%--third-party roleId : 3791532340293158874 --%>
 
 <html>
 <head>
