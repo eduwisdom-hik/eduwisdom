@@ -24,7 +24,7 @@ public class UserFilter implements Filter {
 
         HttpSession session = request.getSession(true);
         if (session.getAttribute("userId") == null || session.getAttribute("roleId") == null) {
-            response.sendRedirect("/eduwisdom/");
+            response.sendRedirect("/eduwisdom/");//项目名
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
         }
