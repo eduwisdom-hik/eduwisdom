@@ -15,15 +15,25 @@ function login() {
         tipDialog("请输入密码");
         return false;
     }
+   //justify radio判断radio值
+    var role;
+    var radio=document.getElementsByName("role");
+    for(var i=0;i<radio.length;i++){
+    	if(radio[i].checked==true){
+    		role=radio[i].value;
+    		break;
+    	}
+    } 
     tipDialog("正在登录……");
     $.ajax({
         type: "POST",
         url: path + "/index/login.index",
-        data: {username: $("#username").val(), password: $("#password").val()},
+        data: {username: $("#username").val(), password: $("#password").val(), role:role},
         dataType: "json",
         error: function () {
             tipDialog("登录失败，连接错误。请刷新页面重试。");
-        }, success: function (request) {
+        }, 
+        success: function (request) {
             if (request != null && request.id != undefined) {
                 $.cookie('realname', request.realname, {expires: 7, path: '/'});
                 location.href = path + "/index/forwardMainUI.do";

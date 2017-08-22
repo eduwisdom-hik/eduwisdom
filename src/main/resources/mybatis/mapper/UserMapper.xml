@@ -24,11 +24,14 @@
             <if test="username != null and username != ''">
                 AND username = #{username}
             </if>
-            <if test="userEmail != null and userEmail != ''">
+         	<if test="userEmail != null and userEmail != ''">
                 AND user_email = #{userEmail}
             </if>
             <if test="password != null and password != ''">
                 AND password = #{password}
+            </if>
+            <if test="roleId != null and roleId != ''">
+                AND role_id = #{roleId}
             </if>
         </where>
     </select>

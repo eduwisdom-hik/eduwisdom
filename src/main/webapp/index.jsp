@@ -35,26 +35,37 @@
 <body>
 <div id="loginbox">
     <form id="loginform" class="form-vertical" action="javascript:;">
-        <div class="control-group normal_text"><h3 style="font-family:'黑体';">学习资源个性化推荐系统</h3></div>
+        <div class="control-group normal_text"><h3 style="font-family:'黑体';">智慧教育资源推荐系统</h3></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
                     <span class="add-on bg_lg">
                         <i class="icon-user"></i>
-                    </span><input id="username" type="text" placeholder="用户名"/>
+                    </span>
+                    <input id="username" type="text" placeholder="用户名"/>
                 </div>
             </div>
         </div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
-                    <span class="add-on bg_ly"><i class="icon-lock"></i></span><input id="password" type="password" placeholder="密码"/>
+                    <span class="add-on bg_ly">
+                    	<i class="icon-lock"></i>
+                    </span>
+                    <input id="password" type="password" placeholder="密码"/>
                 </div>
             </div>
         </div>
+        <table class="choose_btn" align="center" style="font-size:16px;color:#fff;">
+        	<tr>
+        		<td><input type="radio" name="role" value="user" checked style="padding: 0px;margin: 0px;">普通用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        		<td><input type="radio" name="role" value="thirdpart" style="padding: 0px;margin: 0px;">教育机构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        		<td><input type="radio" name="role" value="admin" style="padding: 0px;margin: 0px;">管理员</td>
+        	</tr>
+        </table>
         <div class="form-actions">
-            <span class="pull-left"><a class="flip-link btn btn-info" id="to-recover">忘记密码?</a></span>
-            <span class="pull-right"><button type="submit" id="loginSubmit" class="btn btn-success" onclick="login()">登录</button></span>
+            <span class="pull-left"><a class="flip-link btn btn-info" id="to-recover" style="margin-left:37px;">忘记密码?</a></span>
+            <span class="pull-right"><button type="submit" id="loginSubmit" class="btn btn-success" style="margin-right:40px;" onclick="login()">登录</button></span>
         </div>
     </form>
     <form id="recoverform" class="form-vertical" action="javascript:;">
