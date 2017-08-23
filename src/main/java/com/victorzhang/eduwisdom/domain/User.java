@@ -23,10 +23,17 @@ public class User implements Serializable {
     private String gmtModify;
 
     public User(){}
-
-    public User(String username, String password){
+    
+    public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+    
+    public User(String username, String password, String roleId){
         this.username = username;
         this.password = password;
+        this.roleId = roleId;
     }
 
     public User(String userEmail){
@@ -44,4 +51,7 @@ public class User implements Serializable {
         this.tag = tag;
         this.gmtModify = gmtModify;
     }
+
+
+	
 }

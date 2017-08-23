@@ -8,7 +8,9 @@ import java.util.Map;
 
 public interface UserService extends BaseService<User, String> {
     User doLoginByUsernameAndPassword(String username, String password, HttpServletRequest request) throws Exception;
-
+    
+    User doLoginByUsernameAndPasswordAndRoleId(String username, String password, String roleId, HttpServletRequest request) throws Exception;
+    
     String doGetUserByEmail(String email) throws Exception;
 
     String doResetPassword(String username, String checkCode, String password, String rePassword) throws Exception;

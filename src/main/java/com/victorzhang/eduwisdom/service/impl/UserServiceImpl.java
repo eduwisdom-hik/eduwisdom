@@ -6,6 +6,7 @@ import com.victorzhang.eduwisdom.mapper.UserMapper;
 import com.victorzhang.eduwisdom.service.LogService;
 import com.victorzhang.eduwisdom.service.UserService;
 import com.victorzhang.eduwisdom.util.CommonUtils;
+import com.victorzhang.eduwisdom.util.Constants;
 import com.victorzhang.eduwisdom.util.EmailUtils;
 import com.victorzhang.eduwisdom.util.MD5Utils;
 import org.apache.commons.lang3.StringUtils;
@@ -39,10 +40,39 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
     protected BaseMapper<User, String> getMapper() {
         return userMapper;
     }
-
+    
+    @Override
+	public User doLoginByUsernameAndPasswordAndRoleId(String username, String password, String role_id,
+			HttpServletRequest request) throws Exception {
+		// TODO Auto-generated method stub
+    	if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password) && StringUtils.isNotEmpty(role_id)) {
+        	String roleId = "";
+        	if(role_id.equals("user")) {
+        		roleId = USER_ROLE_ID;
+        	}else if(role_id.equals("thirdpart")) {
+        		roleId = THIRDPART_ROLE_ID;
+        	}else if(role_id.equals("admin")) {
+        		roleId = ADMIN_ROLE_ID;
+        	}
+            User userObj = new User(username, new MD5Utils().getMD5ofStr(password), roleId);
+            logger.info(username + TRY_LOGIN);
+            logger.info("role is"+role_id);
+            User user = userMapper.get(userObj);
+            if (user != null) {
+                request.getSession().setAttribute(USER_ID, user.getId());
+                request.getSession().setAttribute(ROLE_ID, user.getRoleId());
+                logService.saveLogByLogTypeAndLogContent(LOGIN_SYSTEM, request.getHeader(USER_AGENT));
+                logger.info(username + LOGIN_SUCCESS);
+                return user;
+            }
+            logger.error(user + LOGIN_FAIL);
+        }
+        return null;
+	}
+    
     @Override
     public User doLoginByUsernameAndPassword(String username, String password, HttpServletRequest request) throws Exception {
-        if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
+        if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {        	
             User userObj = new User(username, new MD5Utils().getMD5ofStr(password));
             logger.info(username + TRY_LOGIN);
             User user = userMapper.get(userObj);
@@ -152,5 +182,9 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
         return result;
     }
 
+	
+	
+
+	
 
 }
