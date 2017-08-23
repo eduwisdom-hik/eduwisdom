@@ -1,7 +1,5 @@
 package com.victorzhang.eduwisdom.util;
 
-import org.apache.hadoop.classification.InterfaceAudience.Public;
-
 /**
  * definite some contants
  * Created by victorzhang on 2017/4/1.
