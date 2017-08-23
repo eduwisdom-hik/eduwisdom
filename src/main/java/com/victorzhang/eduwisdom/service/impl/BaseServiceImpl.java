@@ -124,7 +124,37 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
         }
         return result;
     }
-
+    @Override
+    public Map<String, Object> companyResourceListPaging(T entity, String page, String pageSize, String companyName, String startDate, String endDate, GenericQueryParam param) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        if (param == null) {
+            param = new GenericQueryParam();
+        }
+        BuildQueryParam.buildParam(entity, param);
+        if (StringUtils.isNotEmpty(startDate)) {
+            startDate += START_DATE_FORMAT;
+            param.fill(START_DATE, startDate);
+        }
+        if (StringUtils.isNotEmpty(endDate)) {
+            endDate += END_DATE_FORMAT;
+            param.fill(END_DATE, endDate);
+        }
+        if(StringUtils.isNotEmpty(companyName))
+        {
+        	param.fill(COMPANY_NAME, companyName);
+        }
+        int rowCount = count(param);
+        result = CommonUtils.para4Page(result, CommonUtils.paraPage(page), CommonUtils.paraPageSize(pageSize), rowCount);
+        if (rowCount > 0) {
+            param.fill(BEGIN, result.get(BEGIN));
+            param.fill(PAGE_SIZE, result.get(PAGE_SIZE));
+            result.put(DATA, CommonUtils.dataNull(getMapper().listPaging(param)));
+        } else {
+            result.put(DATA, EMPTY_STRING);
+        }
+        return result;
+    }
+    
     @Override
     public int count(T entity) throws Exception {
         GenericQueryParam param = new GenericQueryParam();

@@ -94,11 +94,20 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
         String userId = CommonUtils.sesAttr(request, USER_ID);
         String resourceId = CommonUtils.newUuid();
         String gmtCreate = CommonUtils.getDateTime();
-        Resource resource = new Resource(resourceId, resourceName, resourceDescription, resourceTag, resourceType, fileServerPath, userId, gmtCreate);
+        String roleId=CommonUtils.sesAttr(request, ROLE_ID);
+        String roleType=ROLE_TYPE_USER;
+        if(roleId.equals(ADMIN_ROLE_ID))
+        {
+        	roleType=ROLE_TYPE_ADMIN;
+        }
+        if(roleId.equals(THIRDPART_ROLE_ID))
+        {
+        	roleType=ROLE_TYPE_THIRDPART;
+        }
+        Resource resource = new Resource(resourceId, resourceName, resourceDescription, roleType, resourceTag, resourceType, fileServerPath, userId, gmtCreate);
         if (!super.save(resource)) {
             throw new SQLException(INSERT_ERROR);
         }
-
         try {
             File file = new File(fileServerPath);
             resourceFile.transferTo(file);

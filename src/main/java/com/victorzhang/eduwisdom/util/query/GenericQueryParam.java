@@ -2,7 +2,7 @@ package com.victorzhang.eduwisdom.util.query;
 
 import java.util.LinkedHashMap;
 
-public class GenericQueryParam extends LinkedHashMap<String, Object> implements ListQueryParam {
+public class GenericQueryParam extends LinkedHashMap<String, Object> implements ListQueryParam  {
 
     private static final long serialVersionUID = 1L;
     private static final String PAGE_KEY = "_page";
