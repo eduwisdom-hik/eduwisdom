@@ -62,6 +62,7 @@
                 <c:if test="${ sessionScope.roleId =='3791532340293158876'}">
                     <li><a href="<%= basePath %>resource/forwardVerifyResourceUI.do" id="verifyResource">资源审核</a></li>
                 </c:if>
+                <li><a href="<%=basePath %>resource/forwardCompanyResourceUI.do" id="companyResource">教育机构资源</a></li>
             </ul>
         </li>
         <li class="submenu" id='ul3Parent'>

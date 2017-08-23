@@ -18,7 +18,7 @@ function load(pge) {
     param.verifyType = $("#queryVerifyType option:selected").val();
     param.startDate = $("#queryStartDate").val();
     param.endDate = $("#queryEndDate").val();
-
+    
     $.ajax({
         url: path + "/resource/listPaging.do",
         type: "POST",

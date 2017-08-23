@@ -49,6 +49,7 @@
                     </c:if>
                     <div class="quick-actions_homepage">
                         <ul class="quick-actions">
+                            <li class="bg_ls span3"><a href="<%=basePath%>resource/forwardCompanyResourceUI.do"><i class="icon-briefcase"></i>教育机构资源</a></li>
                             <li class="bg_lo span3"><a href="<%=basePath%>log/forwardUserLogUI.do"> <i class="icon-bookmark"></i> 用户日志 </a></li>
                             <c:if test="${ sessionScope.roleId =='3791532340293158876'}">
                                 <li class="bg_lo span3"><a href="<%=basePath%>log/forwardSystemLogUI.do"> <i class="icon-book"></i> 系统日志 </a></li>
