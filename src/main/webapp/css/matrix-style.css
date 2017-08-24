@@ -454,7 +454,7 @@ hr {
 
 /* Stat boxes and quick actions */
 .quick-actions_homepage {
-    width: 100%;
+    width: 56%;
     text-align: center;
     position: relative;
     float: left;
@@ -553,7 +553,7 @@ hr {
 }
 
 .quick-actions_homepage .quick-actions .span3 {
-    width: 30%;
+    width: 28%;
 }
 
 .quick-actions li, .quick-actions-horizontal li {
