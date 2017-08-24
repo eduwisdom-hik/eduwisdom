@@ -23,8 +23,8 @@
                 <div class="span9">
                     <div class="quick-actions_homepage">
                         <ul class="quick-actions">
-                            <li class="bg_ly span3"><a href="<%=basePath%>user/forwardUserInfoUI.do"> <i class="icon-user"></i> 用户信息 </a></li>
-                            <li class="bg_ly span3"><a href="<%=basePath%>message/forwardUserMessageUI.do"> <i class="icon-bell"></i> 用户消息 </a></li>
+                            <li class="bg_ly span3"><a href="<%=basePath%>user/forwardUserInfoUI.do"> <i class="icon-user"></i>用户信息</a></li>
+                            <li class="bg_ly span3"><a href="<%=basePath%>message/forwardUserMessageUI.do"> <i class="icon-bell"></i>用户消息</a></li>
                         </ul>
                     </div>
                     <div class="quick-actions_homepage">
@@ -36,40 +36,37 @@
                     </div>
                     <div class="quick-actions_homepage">
                         <ul class="quick-actions">
-                        	<li class="bg_ls span3"><a href="<%=basePath%>browseRecord/forwardResourceBrowseRecordUI.do"> <i class="icon-share"></i> 资源浏览记录 </a></li>
-                            <li class="bg_ls span3"><a href="<%=basePath%>downloadRecord/forwardResourceDownloadRecordUI.do"> <i class="icon-download-alt"></i> 资源下载记录 </a></li>
-                            <li class="bg_ls span3"><a href="<%=basePath%>resource/forwardRecommendedResourceUI.do"> <i class="icon-magic"></i> 个性化推荐 </a></li>
-                            
+                        	<li class="bg_ls span3"><a href="<%=basePath%>browseRecord/forwardResourceBrowseRecordUI.do"> <i class="icon-share"></i>资源浏览记录</a></li>
+                            <li class="bg_ls span3"><a href="<%=basePath%>downloadRecord/forwardResourceDownloadRecordUI.do"> <i class="icon-download-alt"></i>资源下载记录</a></li>
+                            <c:if test="${ sessionScope.roleId !='3791532340293158876'}">
+                            	<li class="bg_ls span3"><a href="<%=basePath%>resource/forwardRecommendedResourceUI.do"> <i class="icon-magic"></i>个性化推荐</a></li>
+                            </c:if>
+                            <c:if test="${ sessionScope.roleId =='3791532340293158876'}">
+                            	<li class="bg_ls span3"><a href="<%=basePath%>resource/forwardVerifyResourceUI.do"> <i class="icon-eye-open"></i>资源审核</a></li>
+                            </c:if>
                         </ul>
                     </div>
                     <c:if test="${ sessionScope.roleId !='3791532340293158876'}">
                         <div class="quick-actions_homepage">
                             <ul class="quick-actions">
-                            	<li class="bg_ls span3"><a href="<%=basePath%>comment/forwardCommentResourceUI.do"> <i class="icon-comments"></i> 我的评论 </a></li>
+                            	<li class="bg_ls span3"><a href="<%=basePath%>comment/forwardCommentResourceUI.do"> <i class="icon-comments"></i>我的评论</a></li>
                             </ul>
                         </div>
                     </c:if>
-                    <c:if test="${ sessionScope.roleId =='3791532340293158876'}">
-                        <div class="quick-actions_homepage">
-                            <ul class="quick-actions">
-                            	<li class="bg_ls span3"><a href="<%=basePath%>comment/forwardCommentResourceUI.do"> <i class="icon-comments"></i> 我的评论 </a></li>
-                                <li class="bg_ls span3"><a href="<%=basePath%>resource/forwardVerifyResourceUI.do"> <i class="icon-eye-open"></i> 资源审核 </a></li>
-                            </ul>
-                        </div>
-                    </c:if>
+                    
                     <div class="quick-actions_homepage">
                         <ul class="quick-actions">
-                            <li class="bg_lo span3"><a href="<%=basePath%>log/forwardUserLogUI.do"> <i class="icon-bookmark"></i> 用户日志 </a></li>
+                            <li class="bg_lo span3"><a href="<%=basePath%>log/forwardUserLogUI.do"> <i class="icon-bookmark"></i>用户日志</a></li>
                             <c:if test="${ sessionScope.roleId =='3791532340293158876'}">
-                                <li class="bg_lo span3"><a href="<%=basePath%>log/forwardSystemLogUI.do"> <i class="icon-book"></i> 系统日志 </a></li>
+                                <li class="bg_lo span3"><a href="<%=basePath%>log/forwardSystemLogUI.do"> <i class="icon-book"></i>系统日志</a></li>
                             </c:if>
                         </ul>
                     </div>
                     <c:if test="${ sessionScope.roleId =='3791532340293158876'}">
                         <div class="quick-actions_homepage">
                             <ul class="quick-actions">
-                                <li class="bg_lg span3"><a href="<%=basePath%>manage/forwardUserManagementUI.do"> <i class="icon-group"></i> 用户管理 </a></li>
-                                <li class="bg_lg span3"><a href="<%=basePath%>manage/forwardResourceManagementUI.do"> <i class="icon-globe"></i> 资源管理 </a></li>
+                                <li class="bg_lg span3"><a href="<%=basePath%>manage/forwardUserManagementUI.do"> <i class="icon-group"></i>用户管理</a></li>
+                                <li class="bg_lg span3"><a href="<%=basePath%>manage/forwardResourceManagementUI.do"> <i class="icon-globe"></i>资源管理</a></li>
                             </ul>
                         </div>
                     </c:if>
