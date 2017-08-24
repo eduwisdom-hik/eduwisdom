@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="portlet-body" style="display: block;">
-                           插入饼图
+                           插入饼图---
                         </div>
                     </div>
                     <div class="portlet box blue">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="portlet-body" style="display: block;">
-                           插入柱状图 
+                           插入柱状图---
                         </div>
                     </div>
                 </div>
