@@ -115,13 +115,7 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
         }
         int rowCount = count(param);
         result = CommonUtils.para4Page(result, CommonUtils.paraPage(page), CommonUtils.paraPageSize(pageSize), rowCount);
-        if (rowCount > 0) {
-            param.fill(BEGIN, result.get(BEGIN));
-            param.fill(PAGE_SIZE, result.get(PAGE_SIZE));
-            result.put(DATA, CommonUtils.dataNull(getMapper().listPaging(param)));
-        } else {
-            result.put(DATA, EMPTY_STRING);
-        }
+        judgeRowCount(rowCount, param, result);
         return result;
     }
     @Override
@@ -145,6 +139,12 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
         }
         int rowCount = count(param);
         result = CommonUtils.para4Page(result, CommonUtils.paraPage(page), CommonUtils.paraPageSize(pageSize), rowCount);
+        judgeRowCount(rowCount, param, result);
+
+        return result;
+    }
+
+    private void judgeRowCount(int rowCount, GenericQueryParam param, Map<String, Object> result) throws Exception {
         if (rowCount > 0) {
             param.fill(BEGIN, result.get(BEGIN));
             param.fill(PAGE_SIZE, result.get(PAGE_SIZE));
@@ -152,7 +152,6 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
         } else {
             result.put(DATA, EMPTY_STRING);
         }
-        return result;
     }
     
     @Override
