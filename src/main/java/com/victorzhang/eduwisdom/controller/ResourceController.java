@@ -90,14 +90,25 @@ public class ResourceController {
     public String forwardSystemResourceUI() {
         return "systemResource";
     }
-
+    @RequestMapping("/forwardCompanyResourceUI")
+    public String forwardCompanyResourceUI(){
+    	return "companyResource";
+    }
     @RequestMapping("/listSystemResourcePaging.do")
     @ResponseBody
     public Map<String, Object> listSystemResourcePaging(String _page, String _pageSize, String resourceName, String resourceType, String startDate, String endDate) throws Exception {
         Resource resource = new Resource(resourceName, resourceType, RESOURCE_VERIFY_SUCCESS);
         return resourceService.listPaging(resource, _page, _pageSize, startDate, endDate, null);
     }
-
+    
+    @RequestMapping("/listCompanyResourcePaging.do")
+    @ResponseBody
+    public Map<String, Object> listCompanyResourcePaging(String _page, String _pageSize, String companyName, String resourceName, String resourceType, String startDate, String endDate) throws Exception { 
+    	String roleType=ROLE_TYPE_THIRDPART;
+    	Resource resource = new Resource(resourceName,roleType, resourceType, RESOURCE_VERIFY_SUCCESS);
+    	return resourceService.companyResourceListPaging(resource, _page, _pageSize, companyName, startDate, endDate, null);
+    }
+    
     @RequestMapping("/listNewestResource.do")
     @ResponseBody
     public Map<String, Object> listNewestResource() throws Exception {

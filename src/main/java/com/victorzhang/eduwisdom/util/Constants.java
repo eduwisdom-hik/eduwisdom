@@ -12,7 +12,10 @@ public final class Constants {
     public static final String DOT_STRING = ".";
     public static final String ROLE_ID = "roleId";
     public static final String USER_ID = "userId";
+   
     public static final String ADMIN_ROLE_ID = "3791532340293158876";
+    public static final String USER_ROLE_ID = "3791532340293158875";
+    public static final String THIRDPART_ROLE_ID = "3791532340293158874";
     public static final String UTF_8 = "UTF-8";
     public static final String GBK = "GBK";
     public static final String ISO_8859_1 = "ISO-8859-1";
@@ -78,5 +81,10 @@ public final class Constants {
     public static final int HOT_RESOURCE_SHOW_NUM = 8;
 
     public static final  String TAG_MATCHING= "标签匹配";
+    
+    public static final String ROLE_TYPE_USER="1";//1表示普通用户，2表示第三方机构，3表示管理员
+    public static final String ROLE_TYPE_THIRDPART="2";
+    public static final String ROLE_TYPE_ADMIN="3";
+    public static final String COMPANY_NAME="username";
 
 }
