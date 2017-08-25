@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="portlet-body" style="display: block;">
-                           插入统计图
+                           插入统计图表
                         </div>
                     </div> 
                 </div>
