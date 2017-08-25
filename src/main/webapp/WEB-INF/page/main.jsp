@@ -20,7 +20,7 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span9">
+                <div class="span4">
                     <div class="quick-actions_homepage">
                         <ul class="quick-actions">
                             <li class="bg_ly span3"><a href="<%=basePath%>user/forwardUserInfoUI.do"> <i class="icon-user"></i>用户信息</a></li>
@@ -71,8 +71,8 @@
                         </div>
                     </c:if>
                 </div>
-                <div class="charts">
-                <div class="span4">
+               
+                <div class="span5">
                     <div class="portlet box blue">
                         <div class="portlet-title">
                             <div class="caption"><i class="icon-reorder"></i>饼图</div>
@@ -96,8 +96,8 @@
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="conts">
+                
+                
                 <div class="span3">
                     <div class="portlet box red">
                         <div class="portlet-title">
