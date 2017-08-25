@@ -352,4 +352,20 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
             }
         }
     }
+
+	@Override
+	public Integer countResourceByRole(String roleType) throws Exception {
+		// TODO Auto-generated method stub
+		GenericQueryParam param = new GenericQueryParam();
+		param.fill("roleType", roleType);
+		return getMapper().count(param);
+	}
+
+	@Override
+	public Integer countResourceByResourceType(String resourceType) throws Exception {
+		// TODO Auto-generated method stub
+		GenericQueryParam param = new GenericQueryParam();
+		param.fill("resourceType", resourceType);
+		return getMapper().count(param);
+	}
 }

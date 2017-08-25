@@ -26,4 +26,7 @@ public interface ResourceService extends BaseService<Resource, String> {
     String doVerifyResource(String resourceId, String verifyType, HttpServletRequest request) throws Exception;
 
     Map<String, Object> listRecommendationResource(String page, String pageSize, HttpServletRequest request) throws Exception;
+    
+    Integer countResourceByRole(String type) throws Exception;
+    Integer countResourceByResourceType(String resourceType) throws Exception;
 }

@@ -7,7 +7,9 @@
 <head>
     <%@ include file="common.jsp" %>
     <title>学习资源个性化推荐系统</title>
-    <script src="<%=basePath%>js/page/main.js"></script>
+     <script src="<%=basePath%>echarts/echarts.js"></script>
+     <script src="<%=basePath%>js/page/main.js"></script>
+     <script src="<%=basePath%>js/page/showecharts.js"></script>
 </head>
 
 <c:import url="head.jsp"/>
@@ -92,6 +94,12 @@
                         </div>
                     </div>
 
+                </div>
+                <div id="echartsbyrole" style="width: 2000px;height:200px;"> 
+                    <div id="barbyrole" style="width: 350px;height:200px;"></div>
+                    <div id="piebyrole" style="width: 350px;height:200px; left: 350px; bottom: 100px position: absolute;"></div>
+                    <div id="barbyresourcetype" style="width: 350px;height:200px; left: 700px; bottom: 100px position: absolute;"></div>
+                    <div id="piebyresourcetype" style="width: 400px;height:200px; left: 1100px; bottom: 100px position: absolute;"></div>
                 </div>
             </div>
         </div>

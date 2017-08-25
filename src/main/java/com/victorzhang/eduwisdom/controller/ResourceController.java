@@ -176,4 +176,31 @@ public class ResourceController {
         return "recommendedResource";
 
     }
+    
+    @RequestMapping("/showEchartsByRole.do")
+    @ResponseBody
+    public Map<String, Object> showEchartsByRole() throws Exception{
+    	int countUser=resourceService.countResourceByRole(ROLE_TYPE_USER);
+        int countAdmin=resourceService.countResourceByRole(ROLE_TYPE_ADMIN);
+        int countThirdPart=resourceService.countResourceByRole(ROLE_TYPE_THIRDPART);
+        Map<String, Object> map=new HashMap<String,Object>();
+        map.put("countUser", countUser);
+        map.put("countAdmin", countAdmin);
+        map.put("countThirdPart", countThirdPart);
+        return map;
+    }
+    @RequestMapping("/showEchartsByResourceType.do")
+    @ResponseBody
+    public Map<String, Object> showEchartsByResourceType() throws Exception{
+    	int countpic=resourceService.countResourceByResourceType(PICTURE);
+    	int countdoc=resourceService.countResourceByResourceType(DOCUMENT);
+    	int countvoice=resourceService.countResourceByResourceType(VOICE);
+    	int countvideo=resourceService.countResourceByResourceType(VIDEO);
+        Map<String, Object> map=new HashMap<String,Object>();
+        map.put("countpic", countpic);
+        map.put("countdoc", countdoc);
+        map.put("countvoice", countvoice);
+        map.put("countvideo", countvideo);
+        return map;
+    }
 }
