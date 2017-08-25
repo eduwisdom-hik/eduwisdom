@@ -24,7 +24,7 @@ function load(pge) {
         dataType: "json",
         success: function (res) {
             var mainTable = "<table class='table table-bordered table-striped' >"
-                + "<thead><tr>"
+                + "<thead style='font-size:15px'><tr>"
                 + "<th style='width:5%'>编号</th>"
                 + "<th style='width:50%'>消息内容</th>"
                 + "<th style='width:15%'>发送人</th>"
