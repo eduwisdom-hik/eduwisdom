@@ -27,7 +27,7 @@
                                 <button type="submit" id="listUserRecommendation" class="span2 btn btn-success" onclick="userBasedRecommendation()"><i class="icon-user"></i>
                                     基于用户个性化推荐
                                 </button>
-                                <button type="submit" id="listItemRecommendation" class="span2 btn btn-success" onclick="itemBasedRecommendation()" style="float: right"><i class="icon-list"></i>
+                                <button type="submit" id="listItemRecommendation" class="span2 btn btn-success" onclick="itemBasedRecommendation()"><i class="icon-list"></i>
                                     基于项目个性化推荐
                                 </button>
                             </div>
