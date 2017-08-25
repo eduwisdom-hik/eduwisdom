@@ -86,5 +86,10 @@ public final class Constants {
     public static final String ROLE_TYPE_THIRDPART="2";
     public static final String ROLE_TYPE_ADMIN="3";
     public static final String COMPANY_NAME="username";
+    
+    public static final String PICTURE="0";
+    public static final String DOCUMENT="1";
+    public static final String VOICE="2";
+    public static final String VIDEO="3";
 
 }

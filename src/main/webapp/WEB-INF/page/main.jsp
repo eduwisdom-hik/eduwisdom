@@ -7,7 +7,9 @@
 <head>
     <%@ include file="common.jsp" %>
     <title>智慧教育资源共享推荐平台</title>
+    <script src="<%=basePath%>echarts/echarts.js"></script>
     <script src="<%=basePath%>js/page/main.js"></script>
+    <script src="<%=basePath%>js/page/showecharts.js"></script>
 </head>
 
 <c:import url="head.jsp"/>
@@ -15,7 +17,7 @@
     <div id="box">
         <div id="content-header">
             <div id="breadcrumb">
-                <a href="#" title="首页" class="tip-bottom"> <i class="icon-th"></i> 快速导航 </a>
+                <a href="#" title="首页" class="tip-bottom"> <i class="icon-th"></i>快速导航</a>
             </div>
         </div>
         <div class="container-fluid">
@@ -92,7 +94,20 @@
                             </div>
                         </div>
                         <div class="portlet-body" style="display: block;">
-                           插入统计图表
+                           <div class="container-fluid">
+                           <div class="row">
+                             <ul>
+                                <li id="barbyrole" style="width: 400px;height:200px;"></li>
+			                    <li id="piebyrole" style="width: 400px;height:200px; "></li>
+			                 </ul>
+			              </div>
+			              </div>
+			                <div class="row-fluid">
+			                 <ul>
+			                    <li id="barbyresourcetype" style="width: 350px;height:200px; "></li>
+			                    <li id="piebyresourcetype" style="width: 400px;height:200px; "></li> 
+                             </ul>
+                           </div>
                         </div>
                     </div> 
                 </div>

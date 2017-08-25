@@ -50,6 +50,9 @@
             <if test="resourceName != null and resourceName != ''">
                 AND r.resource_name = #{resourceName}
             </if>
+            <if test="roleType != null and roleType != ''">
+                AND r.role_type = #{roleType}
+            </if>
             <if test="resourceType != null and resourceType != ''">
                 AND r.resource_type = #{resourceType}
             </if>

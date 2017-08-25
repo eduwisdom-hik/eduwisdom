@@ -84,5 +84,7 @@
         </div>
     </form>
 </div>
+<script src="<%=basePath%>js/jquery.backstretch.min.js"></script>
+<script src="<%=basePath%>js/scripts.js"></script>
 </body>
 </html>
