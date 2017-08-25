@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>登录-学习资源个性化推荐系统</title>
+    <title>登录-智慧教育资源共享推荐平台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<%=basePath%>css/bootstrap-responsive.min.css"/>
