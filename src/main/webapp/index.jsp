@@ -35,7 +35,8 @@
 <body>
 <div id="loginbox">
     <form id="loginform" class="form-vertical" action="javascript:;">
-        <div class="control-group normal_text"><h3 style="font-family:'黑体';">智慧教育资源推荐系统</h3></div>
+        <div class="control-group normal_text"><h3 style="font-family:'黑体';">智慧教育资源共享推荐平台</h3></div>
+        <div class="control-group normal_text"><h4 style="font-family: Arial, Helvetica, sans-serif;color:#01699F;text-transform:uppercase;position:relative;top:-15px;font-style: italic;">one for all, all for one</h4></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
