@@ -7,7 +7,9 @@
 <head>
     <%@ include file="common.jsp" %>
     <title>学习资源个性化推荐系统</title>
+    <script src="<%=basePath%>echarts/echarts.js"></script>
     <script src="<%=basePath%>js/page/main.js"></script>
+    <script src="<%=basePath%>js/page/showecharts.js"></script>
 </head>
 
 <c:import url="head.jsp"/>
@@ -81,7 +83,8 @@
                             </div>
                         </div>
                         <div class="portlet-body" style="display: block;">
-                           插入饼图---
+                            <div id="piebyrole" style="width: 400px;height:200px;"></div>
+                            <div id="piebyresourcetype" style="width: 400px;height:200px; "></div>
                         </div>
                     </div>
                     <div class="portlet box blue">
@@ -92,7 +95,8 @@
                             </div>
                         </div>
                         <div class="portlet-body" style="display: block;">
-                           插入柱状图---
+                             <div id="barbyrole" style="width: 350px;height:200px;"></div>
+                             <div id="barbyresourcetype" style="width: 350px;height:200px;"></div>
                         </div>
                     </div>
                 </div>
