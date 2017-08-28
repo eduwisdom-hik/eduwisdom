@@ -132,7 +132,7 @@ function initEchartsResource(){
                xAxis : [
                    {
                     type : 'category',
-                    data : ['图片资源', '文档资源', '语音资源','视频资源'],
+                    data : ['图片资源', '文档资源', '音频资源','视频资源'],
                     axisTick: {
                     alignWithLabel: true
                                }
@@ -168,7 +168,7 @@ function initEchartsResource(){
 			         legend: {
 							        orient: 'vertical',
 							        left: 'left',
-							        data: ['图片资源', '文档资源', '语音资源','视频资源']
+							        data: ['图片资源', '文档资源', '音频资源','视频资源']
 							  },
 					  calculable : true,
 					   series : [
@@ -180,7 +180,7 @@ function initEchartsResource(){
 							            data:[
 							                {value:re.countpic, name:'图片资源'},
 							                {value:re.countdoc, name:'文档资源'},
-							                {value:re.countvoice, name:'语音资源'},
+							                {value:re.countvoice, name:'音频资源'},
 							                {value:re.countvideo, name:'视频资源'},
 							            ],
 							            itemStyle: {
