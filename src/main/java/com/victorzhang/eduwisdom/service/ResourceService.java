@@ -29,4 +29,6 @@ public interface ResourceService extends BaseService<Resource, String> {
     
     Integer countResourceByRole(String type) throws Exception;
     Integer countResourceByResourceType(String resourceType) throws Exception;
+    
+    Integer countResourceByDate(String startDate,String endDate) throws Exception;
 }

@@ -14,13 +14,9 @@
     <script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
 </head>
 <body>
- 
- 
 <input type="text" id="cityName" value="杭州"/>
 <input type="button" onclick="setCity()" value="查找" />
 <div id="container"></div>
- 
- 
 <script type="text/javascript">
     var map = new BMap.Map("container");        //在container容器中创建一个地图,参数container为div的id属性;
  

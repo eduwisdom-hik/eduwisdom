@@ -34,4 +34,6 @@ public interface BaseMapper<T, ID extends Serializable> {
     List<Map<String, Object>> listPaging(GenericQueryParam param) throws Exception;
     
     int count(GenericQueryParam param) throws Exception;
+    
+    Map<String, Object> countbydate(GenericQueryParam param) throws Exception;
 }
