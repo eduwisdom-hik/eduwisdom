@@ -150,6 +150,20 @@
 										</ol>
 									</div>
 								</div>
+								<div class="portlet box red">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="icon-reorder"></i>个性化推荐列表
+										</div>
+										<div class="tools">
+											<a href="javascript:;" class="collapse"></a>
+										</div>
+									</div>
+									<div class="portlet-body" style="display: block;">
+										<ol id="recommendationResource">
+										</ol>
+									</div>
+								</div>
 							</div>
 					</td>
 				</tr>
