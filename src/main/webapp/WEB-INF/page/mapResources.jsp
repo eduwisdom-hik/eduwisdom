@@ -11,7 +11,11 @@
 }
 </style>
 <script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
-
+<script>
+    $(function () {
+        navicatActiveProccess('findResource');
+    });
+</script>
 
 </head>
 
