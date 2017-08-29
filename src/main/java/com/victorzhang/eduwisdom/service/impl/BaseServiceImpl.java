@@ -165,5 +165,18 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
     public int count(GenericQueryParam param) throws Exception {
         return getMapper().count(param);
     }
-
+    @Override
+	
+    public Map<String, Object> countbydate(String startDate,String endDate) throws Exception{
+    	 GenericQueryParam param = new GenericQueryParam();
+    	 if (StringUtils.isNotEmpty(startDate)) {
+             startDate += START_DATE_FORMAT;
+             param.fill(START_DATE, startDate);
+         }
+         if (StringUtils.isNotEmpty(endDate)) {
+             endDate += END_DATE_FORMAT;
+             param.fill(END_DATE, endDate);
+         }
+         return getMapper().countbydate(param);
+    }
 }

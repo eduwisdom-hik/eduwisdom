@@ -67,6 +67,13 @@
             </if>
         </where>
     </select>   
+    
+    <select id="countbydate" resultType="java.util.Map" >
+        SELECT gmt_create, COUNT(1) FROM resource 
+        WHERE gmt_create >= #{startDate} AND #{endDate} >= gmt_create
+        GROUP BY gmt_create
+        ORDER BY gmt_create DESC
+    </select>   
 
     <select id="listPaging" resultType="java.util.Map" parameterType="java.util.Map">
         SELECT CAST(r.id as CHAR(19)) AS id, r.resource_name, r.resource_type, r.resource_download_count, r.resource_browse_count,

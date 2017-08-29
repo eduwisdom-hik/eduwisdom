@@ -199,4 +199,89 @@ function initEchartsResource(){
            myChartPie.setOption(optionpie);
         }
     });
+    $.ajax({
+        type: "POST",
+        url: path + "/resource/showEchartsByDate.do",
+        dataType: "json",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8", 
+        error: function () {
+            tipDialog("提交失败，连接错误。请刷新页面重试。");
+        }, success: function (re) {
+        	var names=[];
+        	var datas=[];
+        	for(var key in re){
+        		names.push(key);
+        		datas.push(re[key]);
+        	}
+        	for(var i=0;i<names.length;i++)
+        	{
+        		for(var j=0;j<names.length-i-1;j++)
+        		{
+        			if(names[j]>names[j+1])
+        			{
+        				var obj1=names[j];
+        				names[j]=names[j+1];
+        				names[j+1]=obj1;
+        				var obj2=datas[j];
+        				datas[j]=datas[j+1];
+        				datas[j+1]=obj2;
+        			}
+        		}
+        	}
+        	var myChart=echarts.init(document.getElementById('line'));
+        	option={
+        		 title: {
+                    text: '10天资源上传量统计曲线'
+                },
+                tooltip: {
+                    trigger: 'axis'
+
+                },
+                legend: {
+                    data:['10天资源上传量统计曲线']
+                },
+                grid: {
+                    left: '1%',
+                    right: '1%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                toolbox: {
+                    show: false,
+                    feature: {
+                        dataZoom: {
+                            yAxisIndex: 'none'
+                        },
+                        dataView: {readOnly: false},
+                        magicType: {type: ['line', 'bar']},
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                color:["red","#CD3333"],
+                xAxis:  {
+                    type: 'category',
+                    boundaryGap: false,
+                    data : names,
+                    axisTick: {length:2}
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '单位（个）',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                },
+                series: [
+                    {
+                        name:'10天资源上传量统计曲线',
+                        type:'line',
+                        data:datas
+                       
+                    }
+                        ]
+        	}
+        	myChart.setOption(option);
+        }
+    });
 }
