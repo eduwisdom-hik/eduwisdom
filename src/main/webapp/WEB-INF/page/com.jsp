@@ -19,7 +19,7 @@
 <script src="<%=basePath%>js/bootstrap.min.js"></script>
 <script src="<%=basePath%>js/jquery.uniform.js"></script>
 <script src="<%=basePath%>js/jquery.dataTables.min.js"></script>
-<script src="<%=basePath%>js/matrix.js"></script>
+  <script src="<%=basePath%>js/matrix.js"></script>
 <script src="<%=basePath%>js/matrix.tables.js"></script>
 <script src="<%=basePath%>plugins/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 <script src="<%=basePath%>plugins/dialog/dialog-min.js" type="text/javascript"></script>

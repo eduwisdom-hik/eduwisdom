@@ -4,7 +4,7 @@
 <html>
 <head>
     <%@ include file="common.jsp" %>
-    <title>资源详情--学习资源个性化推荐系统</title>
+    <title>资源详情--智慧教育资源共享推荐平台</title>
     <link rel="stylesheet" href="<%=basePath%>css/resourceDetail.css"/>
     <script src="<%=basePath%>js/jquery.url.js"></script>
     <link rel="stylesheet" href="../plugins/jquery-raty/jquery.raty.css">

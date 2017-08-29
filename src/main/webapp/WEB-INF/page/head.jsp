@@ -56,7 +56,7 @@
                 <li><a href="<%= basePath %>resource/forwardUserResourceUI.do" id="userResource">用户资源</a></li>
                 <li><a href="<%= basePath %>resource/forwardSystemResourceUI.do" id="systemResource">系统资源</a></li>
                 <li><a href="<%=basePath %>resource/forwardCompanyResourceUI.do" id="companyResource">教育机构资源</a></li>
-                <li><a href="<%= basePath %>resource/forwardFindResourceUI.do" id="findResource">地图找资源</a></li>
+                <li><a href="<%= basePath %>resource/forwardFindResourceUI.do" id="findResource">资源地图分布</a></li>
                 <li><a href="<%= basePath %>browseRecord/forwardResourceBrowseRecordUI.do" id="resourceBrowseRecord">资源浏览记录</a></li>
                 <li><a href="<%= basePath %>downloadRecord/forwardResourceDownloadRecordUI.do" id="resourceDownloadRecord">资源下载记录</a></li>
                 <li><a href="<%= basePath %>resource/forwardRecommendedResourceUI.do" id="recommendedResource">个性化推荐</a></li>

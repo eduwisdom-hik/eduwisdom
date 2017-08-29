@@ -4,7 +4,7 @@
 <html>
 <head>
     <%@ include file="common.jsp" %>
-    <title>个性化推荐--学习资源个性化推荐系统</title>
+    <title>个性化推荐--智慧教育资源共享推荐平台</title>
     <script src="<%=basePath%>js/page/recommendedResource.js"></script>
 </head>
 
