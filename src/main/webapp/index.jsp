@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>登录-学习资源个性化推荐系统</title>
+    <title>登录-智慧教育资源共享推荐平台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<%=basePath%>css/bootstrap-responsive.min.css"/>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<%=basePath%>plugins/dialog/ui-dialog.css">
     <script src="<%=basePath%>plugins/dialog/dialog-min.js" type="text/javascript"></script>
 
-    <link rel="shortcut icon" href="<%=basePath%>images/favicon.ico"/>
+    <link rel="shortcut icon" href="<%=basePath%>favicon.ico"/>
 
     <script type="text/javascript">
         var basePath = "<%=basePath%>";
@@ -35,7 +35,8 @@
 <body>
 <div id="loginbox">
     <form id="loginform" class="form-vertical" action="javascript:;">
-        <div class="control-group normal_text"><h3 style="font-family:'黑体';">智慧教育资源推荐系统</h3></div>
+        <div class="control-group normal_text"><h3 style="font-family:'黑体';">智慧教育资源共享推荐平台</h3></div>
+        <div class="control-group normal_text"><h4 style="font-family: Arial, Helvetica, sans-serif;color:#01699F;text-transform:uppercase;position:relative;top:-15px;font-style: italic;">one for all, all for one</h4></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
@@ -83,5 +84,7 @@
         </div>
     </form>
 </div>
+<script src="<%=basePath%>js/jquery.backstretch.min.js"></script>
+<script src="<%=basePath%>js/scripts.js"></script>
 </body>
 </html>

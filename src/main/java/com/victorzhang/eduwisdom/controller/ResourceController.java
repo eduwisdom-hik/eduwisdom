@@ -1,5 +1,6 @@
 package com.victorzhang.eduwisdom.controller;
 
+import com.ibm.icu.text.SimpleDateFormat;
 import com.victorzhang.eduwisdom.domain.Resource;
 import com.victorzhang.eduwisdom.service.ResourceService;
 import com.victorzhang.eduwisdom.util.CommonUtils;
@@ -17,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -176,4 +179,54 @@ public class ResourceController {
         return "recommendedResource";
 
     }
+    
+    @RequestMapping("/forwardFindResourceUI.do")
+    public String findResourceByMap(){
+    	return "mapResources";
+    }
+    
+    @RequestMapping("/showEchartsByRole.do")
+    @ResponseBody
+    public Map<String, Object> showEchartsByRole() throws Exception{
+    	int countUser=resourceService.countResourceByRole(ROLE_TYPE_USER);
+        int countAdmin=resourceService.countResourceByRole(ROLE_TYPE_ADMIN);
+        int countThirdPart=resourceService.countResourceByRole(ROLE_TYPE_THIRDPART);
+        Map<String, Object> map=new HashMap<String,Object>();
+        map.put("countUser", countUser);
+        map.put("countAdmin", countAdmin);
+        map.put("countThirdPart", countThirdPart);
+        return map;
+    }
+    @RequestMapping("/showEchartsByResourceType.do")
+    @ResponseBody
+    public Map<String, Object> showEchartsByResourceType() throws Exception{
+    	int countpic=resourceService.countResourceByResourceType(PICTURE);
+    	int countdoc=resourceService.countResourceByResourceType(DOCUMENT);
+    	int countvoice=resourceService.countResourceByResourceType(VOICE);
+    	int countvideo=resourceService.countResourceByResourceType(VIDEO);
+        Map<String, Object> map=new HashMap<String,Object>();
+        map.put("countpic", countpic);
+        map.put("countdoc", countdoc);
+        map.put("countvoice", countvoice);
+        map.put("countvideo", countvideo);
+        return map;
+    }
+    @RequestMapping("/showEchartsByDate.do")
+    @ResponseBody
+    public Map<String , Object> showEchartsByDate() throws Exception{
+    	Date now=new Date();
+    	SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd");
+    	Calendar date = Calendar.getInstance();
+    	Map<String, Object> map=new HashMap<String, Object>();
+    	for(int i=0;i<=10;i++)
+    	{
+    		//now=new Date((Long)System.currentTimeMillis()-1000*60*60*24*i);
+    		date.setTime(now);
+    		date.set(Calendar.DATE, date.get(Calendar.DATE)-1);
+    		now=sf.parse(sf.format(date.getTime()));
+    		map.put(sf.format(now), resourceService.countResourceByDate(sf.format(now), sf.format(now)));
+    	}
+    	return map;
+    }
+    
 }

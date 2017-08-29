@@ -2,6 +2,7 @@ $(function () {
     navicatActiveProccess('main');
     initNewestResource();
     initHotResource();
+    initRecommendationResource();
 });
 
 function initNewestResource(){

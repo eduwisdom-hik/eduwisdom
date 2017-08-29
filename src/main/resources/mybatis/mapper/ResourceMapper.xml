@@ -50,6 +50,9 @@
             <if test="resourceName != null and resourceName != ''">
                 AND r.resource_name = #{resourceName}
             </if>
+            <if test="roleType != null and roleType != ''">
+                AND r.role_type = #{roleType}
+            </if>
             <if test="resourceType != null and resourceType != ''">
                 AND r.resource_type = #{resourceType}
             </if>
@@ -63,6 +66,13 @@
                 AND #{endDate} >= r.gmt_create
             </if>
         </where>
+    </select>   
+    
+    <select id="countbydate" resultType="java.util.Map" >
+        SELECT gmt_create, COUNT(1) FROM resource 
+        WHERE gmt_create >= #{startDate} AND #{endDate} >= gmt_create
+        GROUP BY gmt_create
+        ORDER BY gmt_create DESC
     </select>   
 
     <select id="listPaging" resultType="java.util.Map" parameterType="java.util.Map">

@@ -4,7 +4,7 @@
 <html>
 <head>
     <%@ include file="common.jsp" %>
-    <title>个性化推荐--学习资源个性化推荐系统</title>
+    <title>个性化推荐--智慧教育资源共享推荐平台</title>
     <script src="<%=basePath%>js/page/recommendedResource.js"></script>
 </head>
 
@@ -27,7 +27,7 @@
                                 <button type="submit" id="listUserRecommendation" class="span2 btn btn-success" onclick="userBasedRecommendation()"><i class="icon-user"></i>
                                     基于用户个性化推荐
                                 </button>
-                                <button type="submit" id="listItemRecommendation" class="span2 btn btn-success" onclick="itemBasedRecommendation()" style="float: right"><i class="icon-list"></i>
+                                <button type="submit" id="listItemRecommendation" class="span2 btn btn-success" onclick="itemBasedRecommendation()"><i class="icon-list"></i>
                                     基于项目个性化推荐
                                 </button>
                             </div>

@@ -32,4 +32,6 @@ public interface BaseService<T, ID extends Serializable> {
     int count(T entity) throws Exception;
 
     int count(GenericQueryParam param) throws Exception;
+    
+    Map<String, Object> countbydate(String startDate,String endDate) throws Exception;
 }
