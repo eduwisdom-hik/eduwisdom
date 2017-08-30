@@ -4,7 +4,7 @@
 <html>
 <head>
     <%@ include file="common.jsp" %>
-    <title>消息管理--学习资源个性化推荐系统</title>
+    <title>消息管理--智慧教育资源共享推荐平台</title>
     <script src="<%=basePath%>js/page/messageManagement.js"></script>
 </head>
 

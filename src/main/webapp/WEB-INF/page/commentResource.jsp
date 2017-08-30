@@ -4,7 +4,7 @@
 <html>
 <head>
     <%@ include file="common.jsp" %>
-    <title>我的评论--学习资源个性化推荐系统</title>
+    <title>我的评论--智慧教育资源共享推荐平台</title>
     <script src="<%=basePath%>js/page/commentResource.js"></script>
 </head>
 

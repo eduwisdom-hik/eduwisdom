@@ -4,7 +4,7 @@
 <html>
 <head>
     <%@ include file="common.jsp" %>
-    <title>资源浏览记录--学习资源个性化推荐系统</title>
+    <title>资源浏览记录--智慧教育资源共享推荐平台</title>
     <script src="<%=basePath%>js/page/resourceBrowseRecord.js"></script>
 </head>
 
@@ -13,7 +13,7 @@
     <div id="content-header">
         <div id="breadcrumb">
             <a href="javascript:void(0);" title="资源中心" class="tip-bottom"> <i class="icon-shopping-cart"></i> 资源中心 </a>
-            <a href="javascript:void(0);" title="系统浏览记录" class="tip-right"> 系统浏览记录 </a>
+            <a href="javascript:void(0);" title="资源浏览记录" class="tip-right"> 资源浏览记录 </a>
         </div>
     </div>
 

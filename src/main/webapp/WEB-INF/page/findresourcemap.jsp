@@ -6,6 +6,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>地图找资源</title>
+
     <style type="text/css">
         html{height:100%}
         body{height:100%;margin:0px;padding:0px}

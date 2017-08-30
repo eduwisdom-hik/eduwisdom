@@ -182,7 +182,7 @@ public class ResourceController {
     
     @RequestMapping("/forwardFindResourceUI.do")
     public String findResourceByMap(){
-    	return "findresourcemap";
+    	return "mapResources";
     }
     
     @RequestMapping("/showEchartsByRole.do")

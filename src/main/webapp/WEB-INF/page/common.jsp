@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="<%=basePath%>plugins/dialog/ui-dialog.css"/>
 
 <link rel="stylesheet" href="<%=basePath%>css/global.css"/>
-<link rel="shortcut icon" href="<%=basePath%>images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="<%=basePath%>favicon.ico">
 
 <script type="text/javascript" src="<%=basePath%>js/jquery-1.8.2.js"></script>
 <script src="<%=basePath%>js/jquery.ui.custom.js"></script>

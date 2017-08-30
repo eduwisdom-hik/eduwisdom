@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<%=basePath%>plugins/dialog/ui-dialog.css">
     <script src="<%=basePath%>plugins/dialog/dialog-min.js" type="text/javascript"></script>
 
-    <link rel="shortcut icon" href="<%=basePath%>images/favicon.ico"/>
+    <link rel="shortcut icon" href="<%=basePath%>favicon.ico"/>
 
     <script type="text/javascript">
         var basePath = "<%=basePath%>";
