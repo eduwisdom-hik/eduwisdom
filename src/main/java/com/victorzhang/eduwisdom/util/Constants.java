@@ -78,7 +78,7 @@ public final class Constants {
     public static final String BROWSE_SCORE_FLAG = "2";
     public static final String DOWNLOAD_BROWSE_SCORE_FLAG = "3";
 
-    public static final int HOT_RESOURCE_SHOW_NUM = 8;
+    public static final int HOT_RESOURCE_SHOW_NUM = 10;
 
     public static final  String TAG_MATCHING= "标签匹配";
     
@@ -91,5 +91,8 @@ public final class Constants {
     public static final String DOCUMENT="1";
     public static final String VOICE="2";
     public static final String VIDEO="3";
+
+    public static final String THREE_PART_SEARCH_OPERATION = "0";
+    public static final String SYSTEM_SEARCH_OPERATION = "1";
 
 }

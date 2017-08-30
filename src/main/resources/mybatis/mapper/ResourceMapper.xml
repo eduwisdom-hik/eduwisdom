@@ -140,7 +140,7 @@
     <select id="listNewestResource" resultType="java.util.Map">
         SELECT CAST(id as CHAR(19)) AS id, resource_name FROM resource
         WHERE verify_type = '1'
-        ORDER BY gmt_create DESC LIMIT 8
+        ORDER BY gmt_create DESC LIMIT 10
     </select>
 
     <select id="listHotResource" resultType="java.util.Map" parameterType="java.lang.Integer">
@@ -158,6 +158,12 @@
         WHERE verify_type = '1' AND resource_tag = #{resourceTag}
         GROUP BY id
         ORDER BY SUM(resource_download_count+resource_browse_count) DESC
+    </select>
+
+    <select id="get" resultMap="resource" parameterType="com.victorzhang.eduwisdom.domain.Resource">
+        SELECT CAST(id as CHAR(19)) AS id, user_id
+        FROM resource
+        WHERE resource_name = #{resourceName}
     </select>
 
 </mapper>

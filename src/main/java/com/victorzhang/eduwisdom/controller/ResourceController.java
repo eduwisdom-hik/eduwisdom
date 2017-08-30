@@ -53,6 +53,7 @@ public class ResourceController {
     @RequestMapping("/listPaging.do")
     @ResponseBody
     public Map<String, Object> listPaging(String _page, String _pageSize, String resourceName, String resourceType, String verifyType, String startDate, String endDate) throws Exception {
+
         Resource resource = new Resource();
         resource.setUserId(CommonUtils.sesAttr(request, USER_ID));
         resource.setResourceType(resourceType);
@@ -100,18 +101,22 @@ public class ResourceController {
     @RequestMapping("/listSystemResourcePaging.do")
     @ResponseBody
     public Map<String, Object> listSystemResourcePaging(String _page, String _pageSize, String resourceName, String resourceType, String startDate, String endDate) throws Exception {
+        //insert correct message to search table
+        resourceService.insertOrUpdateSearchTable(SYSTEM_SEARCH_OPERATION, resourceName);
         Resource resource = new Resource(resourceName, resourceType, RESOURCE_VERIFY_SUCCESS);
         return resourceService.listPaging(resource, _page, _pageSize, startDate, endDate, null);
     }
     
     @RequestMapping("/listCompanyResourcePaging.do")
     @ResponseBody
-    public Map<String, Object> listCompanyResourcePaging(String _page, String _pageSize, String companyName, String resourceName, String resourceType, String startDate, String endDate) throws Exception { 
+    public Map<String, Object> listCompanyResourcePaging(String _page, String _pageSize, String companyName, String resourceName, String resourceType, String startDate, String endDate) throws Exception {
+        //insert correct message to search table
+        resourceService.insertOrUpdateSearchTable(THREE_PART_SEARCH_OPERATION, resourceName);
     	String roleType=ROLE_TYPE_THIRDPART;
     	Resource resource = new Resource(resourceName,roleType, resourceType, RESOURCE_VERIFY_SUCCESS);
     	return resourceService.companyResourceListPaging(resource, _page, _pageSize, companyName, startDate, endDate, null);
     }
-    
+
     @RequestMapping("/listNewestResource.do")
     @ResponseBody
     public Map<String, Object> listNewestResource() throws Exception {

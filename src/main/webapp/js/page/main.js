@@ -44,3 +44,28 @@ function initHotResource(){
         }
     });
 }
+
+function initRecommendationResource() {
+    $.ajax({
+        type: "POST",
+        url: path + "/search/listSearchRecommendationResource.do",
+        dataType: "json",
+        error: function () {
+            tipDialog("提交失败，连接错误。请刷新页面重试。");
+        }, success: function (re) {
+            var msg = "";
+            var datas = re.data;
+            if (datas.length > 0) {
+                var len = 10;
+                if(datas.length <= 10){
+                    len = datas.length;
+                }
+                for (var i = 0; i < len; i++) {
+                    msg += "<li><a href='javascript:void(0);' title='' onclick=getResourceDetail('" + datas[i].resource.id + "') >" + datas[i].resource.resourceName + "</a></li>";
+                }
+            }
+            $("#searchRecommendationResource").html(msg);
+        }
+    });
+
+}
