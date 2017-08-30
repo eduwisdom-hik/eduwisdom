@@ -218,7 +218,7 @@ public class ResourceController {
     	SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd");
     	Calendar date = Calendar.getInstance();
     	Map<String, Object> map=new HashMap<String, Object>();
-    	for(int i=0;i<=10;i++)
+    	for(int i=0;i<=7;i++)
     	{
     		//now=new Date((Long)System.currentTimeMillis()-1000*60*60*24*i);
     		date.setTime(now);
