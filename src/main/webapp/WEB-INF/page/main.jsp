@@ -114,11 +114,8 @@
 									           <td id="piebyresourcetype" style="width: 530px;height:220px; "></td>
 									       </tr>
 									    </table>
-<<<<<<<<< Temporary merge branch 1
-=========
-									    <div id="line" style="width: 800px;height:220px;">			    
+									    <div id="line" style="width: 800px;height:220px;">
 									    </div>
->>>>>>>>> Temporary merge branch 2
 									</div>
 								</div>
 							</div>
@@ -130,7 +127,7 @@
 								<div class="portlet box red">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="icon-reorder"></i>最新学习资源
+											<i class="icon-reorder"></i>最新学习资源列表
 										</div>
 										<div class="tools">
 											<a href="javascript:;" class="collapse"></a>
@@ -144,7 +141,7 @@
 								<div class="portlet box red">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="icon-reorder"></i>热门资源
+											<i class="icon-reorder"></i>热门资源列表
 										</div>
 										<div class="tools">
 											<a href="javascript:;" class="collapse"></a>
@@ -152,6 +149,20 @@
 									</div>
 									<div class="portlet-body" style="display: block;">
 										<ol id="hotResource">
+										</ol>
+									</div>
+								</div>
+								<div class="portlet box red">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="icon-reorder"></i>基于搜索内容的个性化推荐列表
+										</div>
+										<div class="tools">
+											<a href="javascript:;" class="collapse"></a>
+										</div>
+									</div>
+									<div class="portlet-body" style="display: block;">
+										<ol id="searchRecommendationResource">
 										</ol>
 									</div>
 								</div>
