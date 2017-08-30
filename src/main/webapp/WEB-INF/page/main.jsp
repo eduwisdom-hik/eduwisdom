@@ -114,7 +114,7 @@
 									           <td id="piebyresourcetype" style="width: 530px;height:220px; "></td>
 									       </tr>
 									    </table>
-									    <div id="line" style="width: 800px;height:220px;">			    
+									     <div id="line" style="width: 880px;height:220px;">			    
 									    </div>
 									</div>
 								</div>
@@ -123,7 +123,7 @@
 
 					</td>
 					<td>
-							<div class="span5">
+							<div class="span4">
 								<div class="portlet box red">
 									<div class="portlet-title">
 										<div class="caption">

@@ -231,14 +231,14 @@ function initEchartsResource(){
         	var myChart=echarts.init(document.getElementById('line'));
         	option={
         		 title: {
-                    text: '10天资源上传量统计曲线'
+                    text: '一周资源上传量统计曲线'
                 },
                 tooltip: {
                     trigger: 'axis'
 
                 },
                 legend: {
-                    data:['10天资源上传量统计曲线']
+                    data:['一周资源上传量统计曲线']
                 },
                 grid: {
                     left: '1%',
@@ -274,7 +274,7 @@ function initEchartsResource(){
                 },
                 series: [
                     {
-                        name:'10天资源上传量统计曲线',
+                        name:'一周资源上传量统计曲线',
                         type:'line',
                         data:datas
                        
