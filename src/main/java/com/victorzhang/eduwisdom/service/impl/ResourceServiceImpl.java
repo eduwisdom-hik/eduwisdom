@@ -388,14 +388,14 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
 	}
 
     @Override
-    public void insertOrUpdateSearchTable(String isThreePartOrSystemSearchOperation, String resourceName) throws Exception {
+    public void insertOrUpdateSearchTable(String isThreePartOrSystemSearchOperation, String resourceName, HttpServletRequest request) throws Exception {
         if(StringUtils.isNotEmpty(resourceName)){
             Search searchCondition = new Search(resourceName);
             Search search = searchService.get(searchCondition);
             if(search != null){
                 updateSearchTable(search);
             } else {
-                insertSearchTable(isThreePartOrSystemSearchOperation, resourceName);
+                insertSearchTable(isThreePartOrSystemSearchOperation, resourceName, request);
             }
         }
     }
@@ -406,7 +406,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
         searchService.update(search);
     }
 
-    public void insertSearchTable(String isThreePartOrSystemSearchOperation, String resourceName) throws Exception{
+    public void insertSearchTable(String isThreePartOrSystemSearchOperation, String resourceName, HttpServletRequest request) throws Exception{
         Resource resourceCondition = new Resource();
         resourceCondition.setResourceName(resourceName);
         Resource resource = get(resourceCondition);
@@ -416,7 +416,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
             searchSave.setSearchContent(resourceName);
             searchSave.setResourceId(resource.getId());
             searchSave.setSearchCount("1");
-            searchSave.setUserId(resource.getUserId());
+            searchSave.setUserId(CommonUtils.sesAttr(request, USER_ID));
             searchSave.setIsThreePart(isThreePartOrSystemSearchOperation);
             searchSave.setGmtCreate(CommonUtils.getDateTime());
             searchService.save(searchSave);

@@ -32,5 +32,5 @@ public interface ResourceService extends BaseService<Resource, String> {
     
     Integer countResourceByDate(String startDate,String endDate) throws Exception;
 
-    void insertOrUpdateSearchTable(String isThreePartOrSystemSearchOperation, String resourceName) throws Exception;
+    void insertOrUpdateSearchTable(String isThreePartOrSystemSearchOperation, String resourceName, HttpServletRequest request) throws Exception;
 }

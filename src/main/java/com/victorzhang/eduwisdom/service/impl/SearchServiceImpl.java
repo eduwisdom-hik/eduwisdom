@@ -1,21 +1,18 @@
 package com.victorzhang.eduwisdom.service.impl;
 
-import com.victorzhang.eduwisdom.domain.Resource;
 import com.victorzhang.eduwisdom.domain.Search;
 import com.victorzhang.eduwisdom.mapper.BaseMapper;
 import com.victorzhang.eduwisdom.mapper.SearchMapper;
 import com.victorzhang.eduwisdom.service.ResourceService;
 import com.victorzhang.eduwisdom.service.SearchService;
 import com.victorzhang.eduwisdom.util.CommonUtils;
+import com.victorzhang.eduwisdom.util.ResourceComparator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.victorzhang.eduwisdom.util.Constants.USER_ID;
 
@@ -53,29 +50,8 @@ public class SearchServiceImpl extends BaseServiceImpl<Search, String> implement
             }
         }
 
-        recommendationSearchs = sortRecommendationSearchs(recommendationSearchs);
+        Collections.sort(recommendationSearchs, new ResourceComparator());
         result.put("data", CommonUtils.dataNull(recommendationSearchs));
-        return result;
-    }
-
-    private List<Map<String, Object>> sortRecommendationSearchs(List<Map<String, Object>> recommendationSearchs) {
-        List<Map<String, Object>> result = new ArrayList<>();
-        for (int i = 0; i < recommendationSearchs.size(); i++) {
-            int ratingI = (int) recommendationSearchs.get(i).get("rating");
-            Resource resourceI = (Resource) recommendationSearchs.get(i).get("resource");
-            Map<String, Object> subResult = new HashMap<>();
-            for (int j = i + 1; j < recommendationSearchs.size(); j++) {
-                int ratingJ = (int) recommendationSearchs.get(j).get("rating");
-                Resource resourceJ = (Resource) recommendationSearchs.get(j).get("resource");
-                if (ratingI < ratingJ){
-                    ratingI = ratingJ;
-                    resourceI = resourceJ;
-                }
-            }
-            subResult.put("rating", ratingI);
-            subResult.put("resource", resourceI);
-            result.add(subResult);
-        }
         return result;
     }
 
