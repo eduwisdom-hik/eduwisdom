@@ -80,6 +80,10 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
     @Qualifier("browseRecordMapper")
     private BrowseRecordMapper browseRecordMapper;
 
+    @Autowired
+    @Qualifier("searchService")
+    private SearchService searchService;
+
     @Override
     protected BaseMapper<Resource, String> getMapper() {
         return resourceMapper;
@@ -382,5 +386,41 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
          }
 		return getMapper().count(param);
 	}
+
+    @Override
+    public void insertOrUpdateSearchTable(String isThreePartOrSystemSearchOperation, String resourceName, HttpServletRequest request) throws Exception {
+        if(StringUtils.isNotEmpty(resourceName)){
+            Search searchCondition = new Search(resourceName);
+            Search search = searchService.get(searchCondition);
+            if(search != null){
+                updateSearchTable(search);
+            } else {
+                insertSearchTable(isThreePartOrSystemSearchOperation, resourceName, request);
+            }
+        }
+    }
+
+    private void updateSearchTable(Search search) throws Exception{
+        search.setSearchCount(String.valueOf(Integer.valueOf(search.getSearchCount()) + 1));
+        search.setGmtModify(CommonUtils.getDateTime());
+        searchService.update(search);
+    }
+
+    public void insertSearchTable(String isThreePartOrSystemSearchOperation, String resourceName, HttpServletRequest request) throws Exception{
+        Resource resourceCondition = new Resource();
+        resourceCondition.setResourceName(resourceName);
+        Resource resource = get(resourceCondition);
+        if(resource != null){
+            Search searchSave = new Search();
+            searchSave.setId(CommonUtils.newUuid());
+            searchSave.setSearchContent(resourceName);
+            searchSave.setResourceId(resource.getId());
+            searchSave.setSearchCount("1");
+            searchSave.setUserId(CommonUtils.sesAttr(request, USER_ID));
+            searchSave.setIsThreePart(isThreePartOrSystemSearchOperation);
+            searchSave.setGmtCreate(CommonUtils.getDateTime());
+            searchService.save(searchSave);
+        }
+    }
 
 }

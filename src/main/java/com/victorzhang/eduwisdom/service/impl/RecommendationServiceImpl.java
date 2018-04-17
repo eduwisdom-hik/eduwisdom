@@ -19,8 +19,8 @@ import java.util.List;
 @Service("recommendationService")
 public class RecommendationServiceImpl implements RecommendationService {
 
-    public static final int NEIGHBORHOOD_NUM = 2;//邻居数量
-    public static final int RECOMMENDATION_NUM = 2;//推荐个数
+    public static final int NEIGHBORHOOD_NUM = 5;//邻居数量
+    public static final int RECOMMENDATION_NUM = 8;//推荐个数
 
     @Resource
     MySQLJDBCDataModel recommendDataModel;

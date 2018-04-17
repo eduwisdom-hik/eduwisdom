@@ -22,6 +22,9 @@ function initEchartsResource(){
            myChartBar.hideLoading();
            myChartPie.hideLoading();
            var option={
+           	 title: { 
+           	 	text:'系统来源统计图'
+           	 },
            	    color: ['#3398DB'],
            	    tooltip : {
                   trigger: 'axis'
@@ -119,6 +122,9 @@ function initEchartsResource(){
            myChartBar.hideLoading();
            myChartPie.hideLoading();
            var option={
+           	title: { 
+           	 	text:'系统类型统计图'
+           	 },
            	    color: ['#FF7744 '],
            	    tooltip : {
                   trigger: 'axis'
@@ -231,14 +237,14 @@ function initEchartsResource(){
         	var myChart=echarts.init(document.getElementById('line'));
         	option={
         		 title: {
-                    text: '10天资源上传量统计曲线'
+                    text: '一周资源上传量变化曲线'
                 },
                 tooltip: {
                     trigger: 'axis'
 
                 },
                 legend: {
-                    data:['10天资源上传量统计曲线']
+                    data:['一周资源上传量变化曲线']
                 },
                 grid: {
                     left: '1%',
@@ -274,7 +280,7 @@ function initEchartsResource(){
                 },
                 series: [
                     {
-                        name:'10天资源上传量统计曲线',
+                        name:'一周资源上传量变化曲线',
                         type:'line',
                         data:datas
                        

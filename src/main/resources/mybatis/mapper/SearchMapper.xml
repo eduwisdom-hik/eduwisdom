@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.victorzhang.eduwisdom.mapper.SearchMapper">
+
+    <resultMap id="search" type="com.victorzhang.eduwisdom.domain.Search">
+        <id column="id" property="id"/>
+        <result column="search_content" property="searchContent"/>
+        <result column="resource_id" property="resourceId"/>
+        <result column="search_count" property="searchCount"/>
+        <result column="user_id" property="userId"/>
+        <result column="is_three_part" property="isThreePart"/>
+        <result column="gmt_create" property="gmtCreate"/>
+        <result column="gmt_modify" property="gmtModify"/>
+    </resultMap>
+
+    <select id="get" resultMap="search" parameterType="com.victorzhang.eduwisdom.domain.Search">
+        SELECT CAST(id as CHAR(19)) AS id, search_count
+        FROM search
+        WHERE search_content = #{searchContent}
+    </select>
+
+    <update id="update" parameterType="com.victorzhang.eduwisdom.domain.Search">
+        UPDATE search
+        SET  search_count = #{searchCount}, gmt_modify = #{gmtModify}
+        WHERE id = #{id}
+    </update>
+
+    <insert id="save" parameterType="com.victorzhang.eduwisdom.domain.Search">
+        INSERT INTO search (id, search_content, resource_id, search_count, user_id, is_three_part, gmt_create)
+        VALUES (#{id}, #{searchContent}, #{resourceId}, #{searchCount}, #{userId}, #{isThreePart}, #{gmtCreate})
+    </insert>
+
+    <select id="getSearchByUserId" resultType="java.util.Map" parameterType="java.lang.String">
+        SELECT search_count, search_content FROM search
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="getSimilarSearchContent" resultType="java.util.Map" parameterType="java.util.Map">
+        SELECT search_count, resource_id FROM search
+        WHERE user_id != #{userId} AND search_content LIKE "%"#{searchContent}"%"
+    </select>
+
+</mapper>
